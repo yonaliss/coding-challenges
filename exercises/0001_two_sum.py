@@ -38,3 +38,18 @@ from typing import List
 
 def two_sum(nums: List[int], target: int) -> List[int]:
     pass
+
+
+if __name__ == "__main__":
+    # (nums, target, expected) — order of the returned indices doesn't matter.
+    cases = [
+        ([2, 7, 11, 15], 9, [0, 1]),
+        ([3, 2, 4], 6, [1, 2]),
+        ([3, 3], 6, [0, 1]),
+    ]
+    for nums, target, expected in cases:
+        result = two_sum(nums, target)
+        assert result is not None and sorted(result) == sorted(expected), (
+            f"two_sum({nums}, {target}) -> {result}, expected {expected}"
+        )
+    print("All tests passed.")
